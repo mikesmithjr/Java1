@@ -189,13 +189,13 @@ public class MainActivity extends Activity {
 
 	public void currentPilotColor(String currentPilot){
 		if(currentPilot == pilot1){
-			ll.setBackgroundColor(getResources().getColor(android.R.color.holo_orange_light));
+			ll.setBackgroundColor(android.R.color.holo_orange_light);
 		} else if(currentPilot == pilot2){
-			ll.setBackgroundColor(getResources().getColor(android.R.color.holo_blue_light));
+			ll.setBackgroundColor(android.R.color.holo_blue_light);
 		} else if(currentPilot == pilot3){
-			ll.setBackgroundColor(getResources().getColor(android.R.color.holo_green_light));
+			ll.setBackgroundColor(android.R.color.holo_green_light);
 		} else if(currentPilot == pilot4){
-			ll.setBackgroundColor(getResources().getColor(android.R.color.holo_red_light));
+			ll.setBackgroundColor(android.R.color.holo_red_light);
 		}
 	}
 	
