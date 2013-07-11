@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 public class MainActivity extends Activity {
 
@@ -25,10 +24,10 @@ public class MainActivity extends Activity {
 	String plane3;
 	String plane4;
 	String currentPilot;
-	ToggleButton pilot1Button;
-	ToggleButton pilot2Button;
-	ToggleButton pilot3Button;
-	ToggleButton pilot4Button;
+	Button pilot1Button;
+	Button pilot2Button;
+	Button pilot3Button;
+	Button pilot4Button;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -77,68 +76,52 @@ public class MainActivity extends Activity {
 		et = new EditText(this);
 		et.setHint("Enter Number of Flights");
 		
-		pilot1Button = new ToggleButton(this);
+		pilot1Button = new Button(this);
 		pilot1Button.setText(pilot1);
-		pilot1Button.setTextOn(pilot1);
-		pilot1Button.setTextOff(pilot1);
 		pilot1Button.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				currentPilot = pilot1;
 				currentPilotColor(pilot1);
-				pilot2Button.setChecked(false);
-				pilot3Button.setChecked(false);
-				pilot4Button.setChecked(false);
+				pilot1Button.setFocusable(true);
 				
 			}
 		});
 		
-		pilot2Button = new ToggleButton(this);
+		pilot2Button = new Button(this);
 		pilot2Button.setText(pilot2);
-		pilot2Button.setTextOn(pilot2);
-		pilot2Button.setTextOff(pilot2);
 		pilot2Button.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				currentPilot = pilot2;
 				currentPilotColor(pilot2);
-				pilot1Button.setChecked(false);
-				pilot3Button.setChecked(false);
-				pilot4Button.setChecked(false);
+				pilot2Button.setFocusable(true);
 			}
 		});
 		
-		pilot3Button = new ToggleButton(this);
+		pilot3Button = new Button(this);
 		pilot3Button.setText(pilot3);
-		pilot3Button.setTextOn(pilot3);
-		pilot3Button.setTextOff(pilot3);
 		pilot3Button.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				currentPilot = pilot3;
 				currentPilotColor(pilot3);
-				pilot1Button.setChecked(false);
-				pilot2Button.setChecked(false);
-				pilot4Button.setChecked(false);
+				pilot3Button.setFocusable(true);
 			}
 		});
 		
-		pilot4Button = new ToggleButton(this);
+		pilot4Button = new Button(this);
 		pilot4Button.setText(pilot4);
-		pilot4Button.setTextOn(pilot4);
-		pilot4Button.setTextOff(pilot4);
 		pilot4Button.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				currentPilot = pilot4;
 				currentPilotColor(pilot4);
-				pilot1Button.setChecked(false);
-				pilot2Button.setChecked(false);
-				pilot3Button.setChecked(false);
+				pilot4Button.setFocusable(true);
 			}
 		});
 		
