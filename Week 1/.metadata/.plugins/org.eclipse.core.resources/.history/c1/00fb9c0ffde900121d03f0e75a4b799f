@@ -164,7 +164,7 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				
+				getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 				int plane1Time = getResources().getInteger(R.integer.plane1);
 				int plane2Time = getResources().getInteger(R.integer.plane2);
 				int plane3Time = getResources().getInteger(R.integer.plane3);
