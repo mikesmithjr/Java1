@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
 		
 		ll = new LinearLayout(this);
 		ll.setOrientation(LinearLayout.VERTICAL);
-		lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+		lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
 		ll.setLayoutParams(lp);
 		
 		TextView tv = new TextView(this);
@@ -49,7 +49,7 @@ public class MainActivity extends Activity {
 		ll.addView(pilotList);
 		
 		TextView tv2 = new TextView(this);
-		tv2.setText("Today's Plane List:");
+		tv.setText("Today's Plane List:");
 		ll.addView(tv2);
 		
 		TextView planeList = new TextView(this);

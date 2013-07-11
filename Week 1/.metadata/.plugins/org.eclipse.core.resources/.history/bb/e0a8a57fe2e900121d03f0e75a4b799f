@@ -49,7 +49,7 @@ public class MainActivity extends Activity {
 		ll.addView(pilotList);
 		
 		TextView tv2 = new TextView(this);
-		tv2.setText("Today's Plane List:");
+		tv.setText("Today's Plane List:");
 		ll.addView(tv2);
 		
 		TextView planeList = new TextView(this);
