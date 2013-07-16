@@ -1,8 +1,0 @@
-<resources>
-    
-    <integer name= "plane1">15</integer>
-    <integer name= "plane2">5</integer>
-    <integer name= "plane3">10</integer>
-    <integer name= "plane4">8</integer>
-    
-</resources>
