@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MovieListing</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string-array name="movie_array">
+        <item >Oblivion</item>
+        <item >The Croods</item>
+        <item >Scary Movie 5</item>
+        <item >G.I Joe</item>
+        <item >Olympus Has Fallen</item>
+        <item >Evil Dead</item>
+        <item >Jurassic Park 3D</item>
+        <item >OZ The Great and Powerfull</item>
+        <item >Temptation</item>
+        <item >Home Run</item>
+        <item >Filly Brown</item>
+        <item >The Host</item>
+    </string-array>
+
+</resources>

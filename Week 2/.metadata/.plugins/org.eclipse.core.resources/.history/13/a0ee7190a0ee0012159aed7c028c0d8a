@@ -1,0 +1,67 @@
+package com.wickedsoftwaredesigns.movielisting;
+
+import com.wickedsoftwaredesigns.libs.Forms;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.view.View;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
+
+public class MainActivity extends Activity {
+	
+	RadioGroup theaterOptions;
+	TextView resultView;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		LinearLayout ll = new LinearLayout(this);
+		LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT,
+				LayoutParams.MATCH_PARENT);
+		ll.setLayoutParams(lp);
+		ll.setOrientation(LinearLayout.VERTICAL);
+
+		LinearLayout entryBox = Forms.oneEntryWithButton(this,
+				"Type Something", "Go");
+		
+		Button movieButton = (Button) entryBox.findViewById(2);
+		
+		movieButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				int selectedRadioId = theaterOptions.getCheckedRadioButtonId();
+				RadioButton selectedRadio = (RadioButton) theaterOptions.findViewById(selectedRadioId);
+				String radioText = (String) selectedRadio.getText();
+				resultView.setText(JSON.readJSON(radioText));
+
+				
+			}
+		});
+
+		resultView = new TextView(this);
+		lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+		resultView .setLayoutParams(lp);
+		ll.addView(resultView);
+		
+		
+		ll.addView(entryBox);
+
+		setContentView(ll);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+}

@@ -1,22 +1,24 @@
 package com.wickedsoftwaredesigns.movielisting;
 
-import com.wickedsoftwaredesigns.libs.Forms;
-
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.res.Resources;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
-import android.widget.Button;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
 	
-	RadioGroup theaterOptions;
+	RadioGroup movieOptions;
 	TextView resultView;
+	String[] movieList;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,33 +29,42 @@ public class MainActivity extends Activity {
 		ll.setLayoutParams(lp);
 		ll.setOrientation(LinearLayout.VERTICAL);
 
-		LinearLayout entryBox = Forms.oneEntryWithButton(this,
-				"Type Something", "Go");
+		//Creating Array Adapter for spinner view
+		Resources res = getResources();
+		movieList = res.getStringArray(R.array.movie_array);
 		
-		Button movieButton = (Button) entryBox.findViewById(2);
+		//Spinner Adapter
+		ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, movieList);
+		spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		
-		movieButton.setOnClickListener(new View.OnClickListener() {
+		//Creating Spinner
+		Spinner viewSpinner = new Spinner(this);
+		viewSpinner.setAdapter(spinnerAdapter);
+		lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+		viewSpinner.setLayoutParams(lp);
+		ll.addView(viewSpinner);
+		viewSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 			
 			@Override
-			public void onClick(View v) {
-				
-				int selectedRadioId = theaterOptions.getCheckedRadioButtonId();
-				RadioButton selectedRadio = (RadioButton) theaterOptions.findViewById(selectedRadioId);
-				String radioText = (String) selectedRadio.getText();
-				resultView.setText(JSON.readJSON(radioText));
-
-				
+			public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
+				String spinnerText = movieList[position];
+				resultView.setText(JSON.readJSON(spinnerText));
+			}
+			
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0){
+			
 			}
 		});
-
+			
 		resultView = new TextView(this);
 		lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
 		resultView .setLayoutParams(lp);
+		
+		
+		
+		
 		ll.addView(resultView);
-		
-		
-		ll.addView(entryBox);
-
 		setContentView(ll);
 	}
 
