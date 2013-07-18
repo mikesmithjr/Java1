@@ -1,33 +1,13 @@
-/*
- * project     MovieListing
- * 
- * package		com.wickedsoftwaredesigns.movielisting
- * 
- * @author     Michael R. Smith Jr
- * 
- * date			Jul 17, 2013
- */
 package com.wickedsoftwaredesigns.movielisting;
 
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.util.Log;
-
 import com.wickedsoftwaredesigns.libs.Movies;
 
-// TODO: Auto-generated Javadoc
-/**
- * The Class JSON.
- */
 public class JSON {
 
-	/**
-	 * Builds the json.
-	 *
-	 * @return the jSON object
-	 */
 	public static JSONObject buildJSON() {
 
 		// create Movies JSONObject
@@ -37,7 +17,7 @@ public class JSON {
 			// create query object
 			JSONObject queryObject = new JSONObject();
 
-			// create movie objects in query 
+			// create movie objects in query
 			for (Movies movie : Movies.values()) {
 
 				// create movies info object
@@ -47,26 +27,19 @@ public class JSON {
 				infoObject.put("theater", movie.setTheater());
 				infoObject.put("showtimes", movie.setShowtimes());
 				infoObject.put("movieName", movie.setMovieName());
-				queryObject.put(movie.name().toString(), infoObject);
+				queryObject.put(movie.name().toString(), moviesObject);
 
 			}
 			// Add query to movies object
 			moviesObject.put("query", queryObject);
-			//Log.i("JSOn", moviesObject.toString());
 		} catch (JSONException e) {
-			Log.e("JSoNError", "Error",e);
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		return moviesObject;
 	}
 
-	/**
-	 * Read json.
-	 *
-	 * @param selected the selected Here is the c
-	 * @return the string
-	 */
 	public static String readJSON(String selected) {
 
 		String result;
@@ -87,8 +60,7 @@ public class JSON {
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			Log.e("error tag", "error", e);
-			result = "";
+			result = e.toString() + "\r\n" + "What the Hell";
 		}
 		
 		return result;

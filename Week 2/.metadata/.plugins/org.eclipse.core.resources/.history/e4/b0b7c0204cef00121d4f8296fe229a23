@@ -48,7 +48,7 @@ public enum Movies {
 	}
 	
 	/**
-	 * Sets the theater. Can you show me the JSOn Data that you created
+	 * Sets the theater.
 	 *
 	 * @return the string
 	 */

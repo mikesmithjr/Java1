@@ -37,7 +37,7 @@ public class JSON {
 			// create query object
 			JSONObject queryObject = new JSONObject();
 
-			// create movie objects in query 
+			// create movie objects in query
 			for (Movies movie : Movies.values()) {
 
 				// create movies info object
@@ -47,14 +47,14 @@ public class JSON {
 				infoObject.put("theater", movie.setTheater());
 				infoObject.put("showtimes", movie.setShowtimes());
 				infoObject.put("movieName", movie.setMovieName());
-				queryObject.put(movie.name().toString(), infoObject);
+				queryObject.put(movie.name().toString(), moviesObject);
 
 			}
 			// Add query to movies object
 			moviesObject.put("query", queryObject);
-			//Log.i("JSOn", moviesObject.toString());
+			Log.i("JSOn", moviesObject.toString());
 		} catch (JSONException e) {
-			Log.e("JSoNError", "Error",e);
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

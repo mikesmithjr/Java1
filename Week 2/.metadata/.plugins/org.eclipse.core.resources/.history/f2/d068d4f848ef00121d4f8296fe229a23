@@ -1,18 +1,5 @@
-/*
- * project     MovieListing
- * 
- * package		com.wickedsoftwaredesigns.libs
- * 
- * @author     Michael R. Smith Jr
- * 
- * date			Jul 17, 2013
- */
 package com.wickedsoftwaredesigns.libs;
 
-// TODO: Auto-generated Javadoc
-/**
- * The Enum Movies.
- */
 public enum Movies {
 
 	Oblivion("Cinemark Frisco", "5:00pm,6:30pm,11:00pm", "Oblivion"),
@@ -32,13 +19,6 @@ public enum Movies {
 	private final String showtimes;
 	private final String movieName;
 	
-	/**
-	 * Instantiates a new movies.
-	 *
-	 * @param theater the theater
-	 * @param showtimes the showtimes
-	 * @param movieName the movie name
-	 */
 	private Movies(String theater, String showtimes, String movieName){
 		
 		this.theater = theater;
@@ -47,29 +27,14 @@ public enum Movies {
 		
 	}
 	
-	/**
-	 * Sets the theater. Can you show me the JSOn Data that you created
-	 *
-	 * @return the string
-	 */
 	public String setTheater(){
 		return theater;
 	}
 	
-	/**
-	 * Sets the showtimes.
-	 *
-	 * @return the string
-	 */
 	public String setShowtimes(){
 		return showtimes;
 	}
 	
-	/**
-	 * Sets the movie name.
-	 *
-	 * @return the string
-	 */
 	public String setMovieName(){
 		return movieName;
 	}

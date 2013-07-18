@@ -52,7 +52,7 @@ public class JSON {
 			}
 			// Add query to movies object
 			moviesObject.put("query", queryObject);
-			//Log.i("JSOn", moviesObject.toString());
+			Log.i("JSOn", moviesObject.toString());
 		} catch (JSONException e) {
 			Log.e("JSoNError", "Error",e);
 			e.printStackTrace();
