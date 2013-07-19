@@ -14,7 +14,7 @@ package com.wickedsoftwaredesigns.libs;
  * The Enum Movies.
  */
 public enum Movies {
-	//List of all the movies with their theater, showtimes, and title
+
 	Oblivion("Cinemark Frisco", "5:00pm,6:30pm,11:00pm", "Oblivion"),
 	TheCroods("Cinemark Frisco", "5:45pm,6:10pm,11:40pm", "The Croods"),
 	ScaryMovie5("Cinemark Frisco", "5:05pm,6:35pm,11:20pm", "Scary Movie 5"),
@@ -27,7 +27,7 @@ public enum Movies {
 	HomeRun("Cinemark Allen", "4:00pm,5:30pm,10:40pm", "Home Run"),
 	FillyBrown("Cinemark Allen", "7:00pm,8:30pm,12:15pm", "Filly Brown"),
 	TheHost("Cinemark Allen", "5:45pm,6:15pm,11:15pm", "The Host");
-	//creating strings to hold the data
+	
 	private final String theater;
 	private final String showtimes;
 	private final String movieName;
@@ -40,7 +40,7 @@ public enum Movies {
 	 * @param movieName the movie name
 	 */
 	private Movies(String theater, String showtimes, String movieName){
-		//saving the data passed into the strings
+		
 		this.theater = theater;
 		this.showtimes = showtimes;
 		this.movieName = movieName;
