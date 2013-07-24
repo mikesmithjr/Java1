@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Java1Week1</string>
+    <string name="title_activity_main">Java1Week1</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name= "moneyamts">Montary Amounts</string>
+    <string name= "pilot1">Joaquin</string>
+    <string name = "pilot2">Gary</string>
+    <string name = "pilot3">Austin</string>
+    <string name = "pilot4">Mike</string>
+    <string name = "plane1">Piper J3 Cub</string>
+    <string name = "plane2">Carbon-Z Yak54</string>
+    <string name = "plane3">Cessna 182</string>
+    <string name = "plane4">The Beast</string>
+    
+
+</resources>
