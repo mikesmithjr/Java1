@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="android.widget.Button"/>
-<fullyQualifiedTypeName name="android.widget.EditText"/>
 <fullyQualifiedTypeName name="com.wickedsoftwaredesigns.java1week1.R.integer"/>
-<fullyQualifiedTypeName name="android.widget.LinearLayout.LayoutParams"/>
 <fullyQualifiedTypeName name="com.wickedsoftwaredesigns.java1week1.R.string"/>
 <fullyQualifiedTypeName name="com.wickedsoftwaredesigns.java1week1.R.id"/>
 <fullyQualifiedTypeName name="android.R.color"/>
@@ -14,16 +11,10 @@
 <fullyQualifiedTypeName name="java.lang.Boolean"/>
 <fullyQualifiedTypeName name="com.wickedsoftwaredesigns.ecom.Product"/>
 <fullyQualifiedTypeName name="com.wickedsoftwaredesigns.ecom.Phone"/>
-<fullyQualifiedTypeName name="android.widget.LinearLayout"/>
-<fullyQualifiedTypeName name="android.widget.RadioButton"/>
 <fullyQualifiedTypeName name="libs.Movies"/>
 <fullyQualifiedTypeName name="android.app.DownloadManager.Query"/>
 <fullyQualifiedTypeName name="org.json.JSONObject"/>
-<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
-<fullyQualifiedTypeName name="android.widget.RadioGroup"/>
-<fullyQualifiedTypeName name="com.wickedsoftwaredesigns.libs.Forms"/>
 <fullyQualifiedTypeName name="android.widget.TextView"/>
-<fullyQualifiedTypeName name="android.view.ViewGroup.LayoutParams"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="android.content.res.Resources"/>
 <fullyQualifiedTypeName name="com.wickedsoftwaredesigns.movielisting.R.array"/>
@@ -33,5 +24,25 @@
 <fullyQualifiedTypeName name="android.widget.Spinner"/>
 <fullyQualifiedTypeName name="android.widget.AdapterView"/>
 <fullyQualifiedTypeName name="android.widget.AdapterView.OnItemSelectedListener"/>
+<fullyQualifiedTypeName name="android.content.Context"/>
+<fullyQualifiedTypeName name="android.net.ConnectivityManager"/>
+<fullyQualifiedTypeName name="android.view.ViewGroup.LayoutParams"/>
+<fullyQualifiedTypeName name="android.widget.LinearLayout"/>
+<fullyQualifiedTypeName name="android.widget.LinearLayout.LayoutParams"/>
+<fullyQualifiedTypeName name="android.widget.RadioGroup"/>
+<fullyQualifiedTypeName name="android.widget.RadioButton"/>
+<fullyQualifiedTypeName name="android.net.NetworkInfo"/>
+<fullyQualifiedTypeName name="com.wickedsoftwaredesigns.libs.Network"/>
+<fullyQualifiedTypeName name="com.wickedsoftwaredesigns.libs.Forms"/>
+<fullyQualifiedTypeName name="android.widget.Button"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="android.widget.EditText"/>
+<fullyQualifiedTypeName name="java.net.URLConnection"/>
+<fullyQualifiedTypeName name="java.io.BufferedInputStream"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="java.net.URLEncoder"/>
+<fullyQualifiedTypeName name="android.os.AsyncTask"/>
+<fullyQualifiedTypeName name="java.net.URL"/>
+<fullyQualifiedTypeName name="com.wickedsoftwaredesigns.movielisting.MainActivity.SearchRequst"/>
 </qualifiedTypeNameHistroy>

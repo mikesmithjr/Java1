@@ -128,7 +128,7 @@ public class MainActivity extends Activity {
 				// readJSON function to return the result view text
 				Log.i("spinner Text", spinnerText);
 				if ("Current Movies".equals(spinnerText)) {
-					getMovieListing("in_theaters");
+					getMovieListing("opening");
 				} else if ("Upcoming Movies".equals(spinnerText)){
 					getMovieListing("upcoming");
 				}
