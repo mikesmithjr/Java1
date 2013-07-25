@@ -1,0 +1,71 @@
+/*
+ * project     MovieListing
+ * 
+ * package		com.wickedsoftwaredesigns.movielisting
+ * 
+ * @author     Michael R. Smith Jr
+ * 
+ * date			Jul 17, 2013
+ */
+package com.wickedsoftwaredesigns.movielisting;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.util.Log;
+
+import com.wickedsoftwaredesigns.libs.Movies;
+
+// TODO: Auto-generated Javadoc
+/**
+ * The Class JSON.
+ */
+public class JSON {
+
+
+	/**
+	 * Read json.
+	 * 
+	 * @param selected
+	 *            the selected Here is the c
+	 * @return the string
+	 */
+	public static String readJSON(JSONObject jsonData) {
+
+		String result;
+		String title;
+		String runtime;
+		String rating;
+		// Creates local JSON Object from passed data
+		JSONObject object = jsonData;
+		
+		//Pull the Array of Movies out of JSON Data
+		try {
+			JSONArray movies = object.getJSONArray("movies");
+			Log.i("JSON Array", movies.toString());
+			result = "";
+		} catch (JSONException e) {
+			Log.e("JSON EXCEPTION", "JSON ARRAY ERROR");
+			result = "";
+		}
+		
+		// Pulls and parses the data into a string
+		/*try {
+			title = object.getJSONObject("movies").getString("title");
+			rating = object.getJSONObject("movies").getString("mpaa_rating");
+			runtime = object.getJSONObject("movies").getString("runtime");
+			result = "Title: " + title + "\r\n" + "Rated: "
+					+ rating + "\r\n" + "Movie Length: " + runtime;
+
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Log.e("error tag", "error", e);
+			result = "";
+		}*/
+
+		return result;
+	}
+
+}

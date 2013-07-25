@@ -10,16 +10,18 @@
 package com.wickedsoftwaredesigns.movielisting;
 
 
-import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLEncoder;
+import java.util.HashMap;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.wickedsoftwaredesigns.libs.FileManagement;
 import com.wickedsoftwaredesigns.libs.Forms;
 import com.wickedsoftwaredesigns.libs.Network;
 
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
@@ -38,11 +40,13 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 // TODO: Auto-generated Javadoc
 /**
  * The Class MainActivity.
  */
+@SuppressWarnings("unchecked")
 public class MainActivity extends Activity {
 
 	Context _context = this;
@@ -50,6 +54,8 @@ public class MainActivity extends Activity {
 	TextView resultView;
 	String[] optionsList;
 	Boolean connected = false;
+	HashMap<String, String> _history;
+	
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -59,6 +65,8 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+		_history = getHistory();
+		
 		//Detect Network Connection
 		connected = Network.getConnectionStatus(_context);
 		if(connected){
@@ -164,7 +172,7 @@ public class MainActivity extends Activity {
 	private void getMovieListing(String listType){
 		String apiKey = "t2m7kt6ccg644jte4fvfsaf7";
 		String baseURL = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/";
-		String searchURL = listType + ".json?apikey=" + apiKey + "&page_limit=1";
+		String searchURL = listType + ".json?apikey=" + apiKey + "&page_limit=3";
 		
 		URL finalURL;
 		try {
@@ -178,7 +186,7 @@ public class MainActivity extends Activity {
 	private void getMovieSearch(String movieName){
 		String apiKey = "t2m7kt6ccg644jte4fvfsaf7";
 		String baseURL = "http://api.rottentomatoes.com/api/public/v1.0/movies.json";
-		String movieURL = "?apikey=" + apiKey + "&q=" + movieName + "&page_limit=1";
+		String movieURL = "?apikey=" + apiKey + "&q=" + movieName + "&page_limit=3";
 
 		
 		URL finalURL;
@@ -191,6 +199,19 @@ public class MainActivity extends Activity {
 			Log.e("BAD URL", "malformed URL");
 			finalURL = null;
 		}
+	}
+	
+	private HashMap<String, String> getHistory(){
+		Object stored = FileManagement.readObjectFile(_context, "history", false);
+		
+		HashMap<String, String> history;
+		if(stored == null){
+			Log.i("HISTORY", "NO HISTORY FILE FOUND");
+			history = new HashMap<String, String>();
+		}else{
+			history = (HashMap<String, String>) stored;
+		}
+		return history;
 	}
 	
 	private class SearchRequest extends AsyncTask<URL, Void, String>{
@@ -207,6 +228,29 @@ public class MainActivity extends Activity {
 		@Override
 		protected void onPostExecute(String result){
 			Log.i("URL Response", result);
+			
+			//Pull the Array of Movies out of JSON Data
+			try {
+				JSONObject object = new JSONObject(result);
+				if(object.getString("total").compareTo("0")==0){
+					Toast toast = Toast.makeText(_context, "No Movie Found", Toast.LENGTH_SHORT);
+					toast.show();
+				}else{
+				JSONArray movies = object.getJSONArray("movies");
+				JSONObject results = JSON.buildJSON(movies);
+				resultView.setText(JSON.readJSON(movies));
+				
+				_history.put(results.getJSONObject("query").getJSONObject("movie").getString("title"), results.toString());
+				FileManagement.storeObjectFile(_context, "history", _history, false);
+				FileManagement.storeStringfile(_context, "temp", results.toString(), true);
+				
+				}
+				
+			} catch (JSONException e) {
+				Log.e("JSON EXCEPTION", "JSON ARRAY ERROR");
+				
+			}
+			
 		}
 	}
 }

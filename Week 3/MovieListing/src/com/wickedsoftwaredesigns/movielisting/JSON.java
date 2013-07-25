@@ -9,12 +9,11 @@
  */
 package com.wickedsoftwaredesigns.movielisting;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.util.Log;
-
-import com.wickedsoftwaredesigns.libs.Movies;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -22,13 +21,16 @@ import com.wickedsoftwaredesigns.libs.Movies;
  */
 public class JSON {
 
+	
 	/**
 	 * Builds the json.
 	 * 
 	 * @return the jSON object
 	 */
-	public static JSONObject buildJSON() {
+	public static JSONObject buildJSON(JSONArray movies) {
 
+		
+		
 		// create Movies JSONObject
 		JSONObject moviesObject = new JSONObject();
 
@@ -37,21 +39,25 @@ public class JSON {
 			JSONObject queryObject = new JSONObject();
 
 			// create movie objects in query
-			for (Movies movie : Movies.values()) {
+			for (int i = 0; i<movies.length(); i++) {
 
+				JSONObject movie = movies.getJSONObject(i);
+				
 				// create movies info object
 				JSONObject infoObject = new JSONObject();
 
 				// add movie info to object
-				infoObject.put("theater", movie.setTheater());
-				infoObject.put("showtimes", movie.setShowtimes());
-				infoObject.put("movieName", movie.setMovieName());
-				queryObject.put(movie.name().toString(), infoObject);
+				infoObject.put("title", movie.getString("title"));
+				infoObject.put("runtime", movie.getString("runtime"));
+				infoObject.put("rating", movie.getString("mpaa_rating"));
+				queryObject.put("movie", infoObject);
 
 			}
 			// Add query to movies object
 			moviesObject.put("query", queryObject);
-			// Log.i("JSOn", moviesObject.toString());
+			Log.i("JSOn", moviesObject.toString());
+			
+			
 		} catch (JSONException e) {
 			Log.e("JSoNError", "Error", e);
 			e.printStackTrace();
@@ -67,28 +73,28 @@ public class JSON {
 	 *            the selected Here is the c
 	 * @return the string
 	 */
-	public static String readJSON(String selected) {
+	public static String readJSON(JSONArray jsonData) {
 
 		String result;
-		String theater;
-		String movieName;
-		String showtimes;
-		// Calls the JSON object built above
-		JSONObject object = buildJSON();
+		String title;
+		String runtime;
+		String rating;
+		// Creates local JSON Object from passed data
+		JSONObject object = buildJSON(jsonData);
+		
+		
+		
 		// Pulls and parses the data into a string
 		try {
-			theater = object.getJSONObject("query").getJSONObject(selected)
-					.getString("theater");
-			showtimes = object.getJSONObject("query").getJSONObject(selected)
-					.getString("showtimes");
-			movieName = object.getJSONObject("query").getJSONObject(selected)
-					.getString("movieName");
-			result = "Theater: " + theater + "\r\n" + "Show Times: "
-					+ showtimes + "\r\n" + "Movie Title: " + movieName;
+			title = object.getJSONObject("query").getJSONObject("movie").getString("title");
+			rating = object.getJSONObject("query").getJSONObject("movie").getString("rating");
+			runtime = object.getJSONObject("query").getJSONObject("movie").getString("runtime");
+			result = "Title: " + title + "\r\n" + "Rated: "
+					+ rating + "\r\n" + "Movie Length: " + runtime + " Minutes";
 
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			
+			
 			Log.e("error tag", "error", e);
 			result = "";
 		}
