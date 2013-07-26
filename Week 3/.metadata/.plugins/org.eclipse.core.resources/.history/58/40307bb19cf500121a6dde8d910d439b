@@ -1,12 +1,3 @@
-/*
- * project     MovieListing
- * 
- * package		com.wickedsoftwaredesigns.libs
- * 
- * @author     Michael R. Smith Jr
- * 
- * date			Jul 17, 2013
- */
 package com.wickedsoftwaredesigns.libs;
 
 import android.content.Context;
@@ -18,22 +9,9 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-// TODO: Auto-generated Javadoc
-/**
- * The Class Forms.
- */
 public class Forms {
 
-	/**
-	 * One entry with button.
-	 *
-	 * @param context the context
-	 * @param hint the hint
-	 * @param buttonText the button text
-	 * @return the linear layout
-	 */
-	public static LinearLayout oneEntryWithButton(Context context, String hint, String buttonText){
-		
+	public static LinearLayout singleEntryWithButton(Context context, String hint, String buttonText){
 		LinearLayout ll = new LinearLayout(context);
 		LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 		ll.setLayoutParams(lp);
@@ -44,7 +22,6 @@ public class Forms {
 		et.setLayoutParams(lp);
 		et.setId(1);
 		
-		
 		Button b = new Button(context);
 		b.setText(buttonText);
 		b.setId(2);
@@ -54,26 +31,23 @@ public class Forms {
 		ll.addView(b);
 		
 		return ll;
+	}
+	
+	public static RadioGroup getOptions(Context context, String[] options){
+		
+		RadioGroup boxes = new RadioGroup(context);
+		for(int i=0; i<options.length; i++){
+			RadioButton rb = new RadioButton(context);
+			rb.setText(options[i]);
+			boxes.addView(boxes);
+		}
+		
+		
+		
+		return boxes;
+		
 		
 	}
 	
-	/**
-	 * Gets the options.
-	 *
-	 * @param context the context
-	 * @param options the options
-	 * @return the options
-	 */
-	public static RadioGroup getOptions(Context context, String[] options){
-		RadioGroup boxes = new RadioGroup(context);
-		
-		for (int i = 0; i < options.length; i++) {
-			RadioButton rb = new RadioButton(context);
-			rb.setText(options[i]);
-			rb.setId(i+1);
-			boxes.addView(rb);
-		}
-		return boxes;
-	}
 	
 }

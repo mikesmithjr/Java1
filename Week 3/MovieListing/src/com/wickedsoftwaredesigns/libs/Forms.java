@@ -1,3 +1,12 @@
+/*
+ * project     MovieListing
+ * 
+ * package		com.wickedsoftwaredesigns.libs
+ * 
+ * @author     Michael R. Smith Jr
+ * 
+ * date			Jul 25, 2013
+ */
 package com.wickedsoftwaredesigns.libs;
 
 import android.content.Context;
@@ -9,8 +18,20 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Forms.
+ */
 public class Forms {
 
+	/**
+	 * Single entry with button.
+	 *
+	 * @param context the context
+	 * @param hint the hint
+	 * @param buttonText the button text
+	 * @return the linear layout
+	 */
 	public static LinearLayout singleEntryWithButton(Context context, String hint, String buttonText){
 		LinearLayout ll = new LinearLayout(context);
 		LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
@@ -33,6 +54,13 @@ public class Forms {
 		return ll;
 	}
 	
+	/**
+	 * Gets the options.
+	 *
+	 * @param context the context
+	 * @param options the options
+	 * @return the options
+	 */
 	public static RadioGroup getOptions(Context context, String[] options){
 		
 		RadioGroup boxes = new RadioGroup(context);
