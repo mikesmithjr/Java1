@@ -2,7 +2,6 @@ INDEX VERSION 1.126+/Users/snuffyms/Desktop/Java1/Java1Git/Week 3/.metadata/.plu
 2915919524.index
 2886269404.index
 3042445238.index
-4242001515.index
 2893724886.index
 733703242.index
 4237668065.index
