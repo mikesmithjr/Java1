@@ -1,0 +1,33 @@
+package com.wickedsoftwaredesigns.libs;
+
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+
+public class Network {
+
+	static Boolean conn = false;
+	static String connectionType = "Unavailable";
+	
+	public static String getConnectionType(Context context){
+		networkInfo(context);
+		return connectionType;
+	}
+	
+	public static Boolean getConnectionStatus(Context context){
+		networkInfo(context);
+		return conn;
+	}
+	
+	private static void networkInfo(Context context){
+		ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo ni = cm.getActiveNetworkInfo();
+		if(ni!= null){
+			if(ni.isConnected()){
+				connectionType = ni.getTypeName();
+				conn = true;
+			}
+		}
+	}
+
+}
