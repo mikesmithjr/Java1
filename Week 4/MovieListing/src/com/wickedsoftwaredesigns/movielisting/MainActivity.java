@@ -20,6 +20,7 @@ import org.json.JSONObject;
 
 import com.wickedsoftwaredesigns.libs.FileManagement;
 import com.wickedsoftwaredesigns.libs.Forms;
+import com.wickedsoftwaredesigns.libs.MovieDisplay;
 import com.wickedsoftwaredesigns.libs.Network;
 
 import android.os.AsyncTask;
@@ -55,6 +56,7 @@ public class MainActivity extends Activity {
 	String[] optionsList;
 	Boolean connected = false;
 	HashMap<String, String> _history;
+	MovieDisplay _movie;
 	
 	/*
 	 * (non-Javadoc)
@@ -157,8 +159,12 @@ public class MainActivity extends Activity {
 		lp = new LayoutParams(LayoutParams.MATCH_PARENT,
 				LayoutParams.MATCH_PARENT);
 		resultView.setLayoutParams(lp);
-		ll.addView(resultView);
+		//ll.addView(resultView);
 
+		
+		_movie = new MovieDisplay(_context);
+		ll.addView(_movie);
+		ll.setOrientation(LinearLayout.VERTICAL);
 		setContentView(ll);
 	}
 
@@ -287,8 +293,10 @@ public class MainActivity extends Activity {
 					toast.show();
 				}else{
 				JSONArray movies = object.getJSONArray("movies");
+				_movie.updateData(movies);
 				JSONObject results = JSON.buildJSON(movies);
-				resultView.setText(JSON.readJSON(movies));
+				//resultView.setText(JSON.readJSON(movies));
+				
 				//saves the data into a history file on internal memory and a temp file on the external memory
 				_history.put(results.getJSONObject("query").getJSONObject("movie").getString("title"), results.toString());
 				FileManagement.storeObjectFile(_context, "history", _history, false);

@@ -50,12 +50,13 @@ public class JSON {
 				infoObject.put("title", movie.getString("title"));
 				infoObject.put("runtime", movie.getString("runtime"));
 				infoObject.put("rating", movie.getString("mpaa_rating"));
+				infoObject.put("thumbnail", movie.getJSONObject("posters").getString("thumbnail"));
 				queryObject.put("movie", infoObject);
 
 			}
 			// Add query to movies object
 			moviesObject.put("query", queryObject);
-			Log.i("JSOn", moviesObject.toString());
+			Log.i("Build JSOn", queryObject.toString());
 			
 			
 		} catch (JSONException e) {
@@ -79,9 +80,10 @@ public class JSON {
 		String title;
 		String runtime;
 		String rating;
+		String thumbnail;
 		// Creates local JSON Object from passed data
 		JSONObject object = buildJSON(jsonData);
-		
+		//Log.i("Read Json Data", jsonData.toString());
 		
 		
 		// Pulls and parses the data into a string
@@ -89,8 +91,11 @@ public class JSON {
 			title = object.getJSONObject("query").getJSONObject("movie").getString("title");
 			rating = object.getJSONObject("query").getJSONObject("movie").getString("rating");
 			runtime = object.getJSONObject("query").getJSONObject("movie").getString("runtime");
-			result = "Title: " + title + "\r\n" + "Rated: "
-					+ rating + "\r\n" + "Movie Length: " + runtime + " Minutes";
+			thumbnail = object.getJSONObject("query").getJSONObject("movie").getString("thumbnail");
+			result = "Title: " + title + "\r\n" + 
+					"Rated: " + rating + "\r\n" + 
+					"Movie Length: " + runtime + " Minutes" + "\r\n"+
+					"Thumbnail Link: " + thumbnail;
 
 		} catch (JSONException e) {
 			

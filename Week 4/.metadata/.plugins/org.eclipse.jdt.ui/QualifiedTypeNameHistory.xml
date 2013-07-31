@@ -12,7 +12,6 @@
 <fullyQualifiedTypeName name="com.wickedsoftwaredesigns.ecom.Phone"/>
 <fullyQualifiedTypeName name="libs.Movies"/>
 <fullyQualifiedTypeName name="android.app.DownloadManager.Query"/>
-<fullyQualifiedTypeName name="android.widget.TextView"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="android.content.res.Resources"/>
 <fullyQualifiedTypeName name="com.wickedsoftwaredesigns.movielisting.R.array"/>
@@ -24,7 +23,6 @@
 <fullyQualifiedTypeName name="android.widget.AdapterView.OnItemSelectedListener"/>
 <fullyQualifiedTypeName name="android.net.ConnectivityManager"/>
 <fullyQualifiedTypeName name="android.view.ViewGroup.LayoutParams"/>
-<fullyQualifiedTypeName name="android.widget.LinearLayout"/>
 <fullyQualifiedTypeName name="android.widget.LinearLayout.LayoutParams"/>
 <fullyQualifiedTypeName name="android.widget.RadioGroup"/>
 <fullyQualifiedTypeName name="android.widget.RadioButton"/>
@@ -40,9 +38,7 @@
 <fullyQualifiedTypeName name="android.os.AsyncTask"/>
 <fullyQualifiedTypeName name="java.net.URL"/>
 <fullyQualifiedTypeName name="com.wickedsoftwaredesigns.movielisting.MainActivity.SearchRequst"/>
-<fullyQualifiedTypeName name="org.json.JSONArray"/>
 <fullyQualifiedTypeName name="org.json.JSONObject"/>
-<fullyQualifiedTypeName name="android.content.Context"/>
 <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
@@ -57,4 +53,11 @@
 <fullyQualifiedTypeName name="com.wickedsoftwaredesigns.libs.FileManagement"/>
 <fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="android.content.Context"/>
+<fullyQualifiedTypeName name="android.widget.GridLayout"/>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="android.widget.LinearLayout"/>
+<fullyQualifiedTypeName name="com.wickedsoftwaredesigns.libs.MovieDisplay"/>
+<fullyQualifiedTypeName name="org.json.JSONArray"/>
+<fullyQualifiedTypeName name="com.wickedsoftwaredesigns.movielisting.JSON"/>
 </qualifiedTypeNameHistroy>
