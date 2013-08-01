@@ -10,5 +10,13 @@
         <item >Upcoming Movies</item>
         
     </string-array>
+        <string name="search_for_a_movie">Search for a Movie</string>
+        <string name="go">Go</string>
+        <string name="please_search_for_a_movie">Please Search for a Movie</string>
+        <string name="or_choose_an_option_below">Or Choose an Option below</string>
+        <string name="movie_title_">"Movie Title: "</string>
+        <string name="runtime_">"Runtime: "</string>
+        <string name="mpaa_rating_">"MPAA Rating: "</string>
+        <string name="thumbnail_">"Thumbnail: "</string>
 
 </resources>

@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.wickedsoftwaredesigns.java1week1.R.integer"/>
-<fullyQualifiedTypeName name="com.wickedsoftwaredesigns.java1week1.R.string"/>
-<fullyQualifiedTypeName name="com.wickedsoftwaredesigns.java1week1.R.id"/>
-<fullyQualifiedTypeName name="android.R.color"/>
-<fullyQualifiedTypeName name="android.view.WindowManager"/>
-<fullyQualifiedTypeName name="android.view.WindowManager.LayoutParams"/>
-<fullyQualifiedTypeName name="com.wickedsoftwaredesigns.ecom.Money"/>
 <fullyQualifiedTypeName name="java.lang.Boolean"/>
 <fullyQualifiedTypeName name="com.wickedsoftwaredesigns.ecom.Product"/>
 <fullyQualifiedTypeName name="com.wickedsoftwaredesigns.ecom.Phone"/>
@@ -18,7 +11,6 @@
 <fullyQualifiedTypeName name="android.widget.ArrayAdapter"/>
 <fullyQualifiedTypeName name="android.R"/>
 <fullyQualifiedTypeName name="android.R.layout"/>
-<fullyQualifiedTypeName name="android.widget.Spinner"/>
 <fullyQualifiedTypeName name="android.widget.AdapterView"/>
 <fullyQualifiedTypeName name="android.widget.AdapterView.OnItemSelectedListener"/>
 <fullyQualifiedTypeName name="android.net.ConnectivityManager"/>
@@ -36,7 +28,6 @@
 <fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="java.net.URLEncoder"/>
 <fullyQualifiedTypeName name="android.os.AsyncTask"/>
-<fullyQualifiedTypeName name="java.net.URL"/>
 <fullyQualifiedTypeName name="com.wickedsoftwaredesigns.movielisting.MainActivity.SearchRequst"/>
 <fullyQualifiedTypeName name="org.json.JSONObject"/>
 <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
@@ -55,9 +46,18 @@
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="android.content.Context"/>
 <fullyQualifiedTypeName name="android.widget.GridLayout"/>
-<fullyQualifiedTypeName name="android.widget.TextView"/>
 <fullyQualifiedTypeName name="android.widget.LinearLayout"/>
 <fullyQualifiedTypeName name="com.wickedsoftwaredesigns.libs.MovieDisplay"/>
 <fullyQualifiedTypeName name="org.json.JSONArray"/>
 <fullyQualifiedTypeName name="com.wickedsoftwaredesigns.movielisting.JSON"/>
+<fullyQualifiedTypeName name="android.widget.Spinner"/>
+<fullyQualifiedTypeName name="android.graphics.Bitmap"/>
+<fullyQualifiedTypeName name="android.graphics.BitmapFactory"/>
+<fullyQualifiedTypeName name="android.widget.ImageView"/>
+<fullyQualifiedTypeName name="java.net.URL"/>
+<fullyQualifiedTypeName name="android.webkit.WebView"/>
+<fullyQualifiedTypeName name="com.wickedsoftwaredesigns.movielisting.R"/>
+<fullyQualifiedTypeName name="com.wickedsoftwaredesigns.movielisting.R.id"/>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="com.wickedsoftwaredesigns.movielisting.R.layout"/>
 </qualifiedTypeNameHistroy>

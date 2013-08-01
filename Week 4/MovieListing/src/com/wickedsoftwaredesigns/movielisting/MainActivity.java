@@ -19,8 +19,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.wickedsoftwaredesigns.libs.FileManagement;
-import com.wickedsoftwaredesigns.libs.Forms;
-import com.wickedsoftwaredesigns.libs.MovieDisplay;
 import com.wickedsoftwaredesigns.libs.Network;
 
 import android.os.AsyncTask;
@@ -31,13 +29,12 @@ import android.content.res.Resources;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.view.ViewGroup.LayoutParams;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -56,7 +53,33 @@ public class MainActivity extends Activity {
 	String[] optionsList;
 	Boolean connected = false;
 	HashMap<String, String> _history;
-	MovieDisplay _movie;
+	
+	
+	public void updateData(JSONArray jsonData){
+		
+		
+		
+		
+		TextView title = (TextView) findViewById(R.id.data_title);
+		getLayoutInflater().inflate(R.layout.movieinfotemplate,);
+		TextView rating = (TextView) findViewById(R.id.data_rating);
+		TextView runtime = (TextView) findViewById(R.id.data_runtime);
+		// Creates local JSON Object from passed data
+				JSONObject object = JSON.buildJSON(jsonData);
+		
+		try {
+			title.setText(object.getJSONObject("query").getJSONObject("movie").getString("title"));
+			rating.setText(object.getJSONObject("query").getJSONObject("movie").getString("rating"));
+			runtime.setText(object.getJSONObject("query").getJSONObject("movie").getString("runtime"));
+			((WebView) findViewById(R.id.data_thumbnail)).loadUrl(object.getJSONObject("query").getJSONObject("movie").getString("thumbnail"));
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
 	
 	/*
 	 * (non-Javadoc)
@@ -66,7 +89,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		setContentView(R.layout.form);
 		_history = getHistory();
 		
 		//Detect Network Connection
@@ -80,40 +103,19 @@ public class MainActivity extends Activity {
 			toast.show();
 		}
 		
-		// Creating the layout and layout params
-		LinearLayout ll = new LinearLayout(this);
-		LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT,
-				LayoutParams.MATCH_PARENT);
-		ll.setLayoutParams(lp);
-		ll.setOrientation(LinearLayout.VERTICAL);
-		
-		//Creating Instructional TextView
-		TextView intro = new TextView(this);
-		intro.setText("Please Search for a Movie");
-		ll.addView(intro);
-		
-		
-		//Creating a Movie search box
-		LinearLayout searchBox = Forms.singleEntryWithButton(this, "Search for a Movie", "Go");
-		ll.addView(searchBox);
-		
 		//Building search button functionality
-		Button searchButton = (Button) searchBox.findViewById(2);
+		Button searchButton = (Button) findViewById(R.id.searchButton);
 		searchButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				EditText movie = (EditText) v.getTag();
+				EditText movie = (EditText) findViewById(R.id.searchField);
 				String movieTitle = movie.getText().toString();
 				getMovieSearch(movieTitle);
 				
 			}
 		});
 		
-		//Creating Second Intructional TextView
-		TextView second = new TextView(this);
-		second.setText("Or Choose an Option below");
-		ll.addView(second);
 		
 		// Creating Array Adapter for spinner view
 		Resources res = getResources();
@@ -126,12 +128,9 @@ public class MainActivity extends Activity {
 				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
 		// Creating Spinner
-		Spinner viewSpinner = new Spinner(this);
+		Spinner viewSpinner = (Spinner) findViewById(R.id.spinner);
 		viewSpinner.setAdapter(spinnerAdapter);
-		lp = new LayoutParams(LayoutParams.MATCH_PARENT,
-				LayoutParams.WRAP_CONTENT);
-		viewSpinner.setLayoutParams(lp);
-		ll.addView(viewSpinner);
+		
 		viewSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 
 			@Override
@@ -154,18 +153,8 @@ public class MainActivity extends Activity {
 
 			}
 		});
-		// adding the result view to the view
-		resultView = new TextView(this);
-		lp = new LayoutParams(LayoutParams.MATCH_PARENT,
-				LayoutParams.MATCH_PARENT);
-		resultView.setLayoutParams(lp);
-		//ll.addView(resultView);
-
 		
-		_movie = new MovieDisplay(_context);
-		ll.addView(_movie);
-		ll.setOrientation(LinearLayout.VERTICAL);
-		setContentView(ll);
+		
 	}
 
 	/*
@@ -293,7 +282,7 @@ public class MainActivity extends Activity {
 					toast.show();
 				}else{
 				JSONArray movies = object.getJSONArray("movies");
-				_movie.updateData(movies);
+				updateData(movies);
 				JSONObject results = JSON.buildJSON(movies);
 				//resultView.setText(JSON.readJSON(movies));
 				
