@@ -29,6 +29,7 @@ import android.content.res.Resources;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -61,7 +62,6 @@ public class MainActivity extends Activity {
 		
 		
 		TextView title = (TextView) findViewById(R.id.data_title);
-		getLayoutInflater().inflate(R.layout.movieinfotemplate,);
 		TextView rating = (TextView) findViewById(R.id.data_rating);
 		TextView runtime = (TextView) findViewById(R.id.data_runtime);
 		// Creates local JSON Object from passed data
@@ -121,15 +121,10 @@ public class MainActivity extends Activity {
 		Resources res = getResources();
 		optionsList = res.getStringArray(R.array.movie_array);
 
-		// Spinner Adapter
-		ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this,
-				android.R.layout.simple_spinner_item, optionsList);
-		spinnerAdapter
-				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
 		// Creating Spinner
 		Spinner viewSpinner = (Spinner) findViewById(R.id.spinner);
-		viewSpinner.setAdapter(spinnerAdapter);
+		
 		
 		viewSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 

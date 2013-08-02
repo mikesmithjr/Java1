@@ -24,7 +24,9 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int cinemark_frisco=0x7f020000;
+        public static final int cinemark_friscobig=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
     }
     public static final class id {
         public static final int action_settings=0x7f090008;
@@ -52,9 +54,11 @@ public final class R {
         public static final int movie_title_=0x7f050007;
         public static final int mpaa_rating_=0x7f050009;
         public static final int or_choose_an_option_below=0x7f050006;
+        public static final int please_choose_an_option=0x7f05000c;
         public static final int please_search_for_a_movie=0x7f050005;
         public static final int runtime_=0x7f050008;
         public static final int search_for_a_movie=0x7f050003;
+        public static final int theater_image=0x7f05000b;
         public static final int thumbnail_=0x7f05000a;
     }
     public static final class style {

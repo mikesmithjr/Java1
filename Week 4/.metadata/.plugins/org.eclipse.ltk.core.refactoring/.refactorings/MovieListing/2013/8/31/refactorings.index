@@ -11,3 +11,6 @@
 1375341639435	Rename resource 'movielayouttemplate.xml'
 1375341771014	Delete element
 1375341826778	Rename resource 'movielabeltemplate.xml'
+1375408615344	Rename resource 'cinemarkFrisco.jpg'
+1375409492344	Extracts string 'theater image' into R.string.theater_image
+1375409547380	Extracts string 'Please Choose an Option' into R.string.please_choose_an_option
