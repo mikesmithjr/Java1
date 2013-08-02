@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.Boolean"/>
-<fullyQualifiedTypeName name="com.wickedsoftwaredesigns.ecom.Product"/>
-<fullyQualifiedTypeName name="com.wickedsoftwaredesigns.ecom.Phone"/>
 <fullyQualifiedTypeName name="libs.Movies"/>
 <fullyQualifiedTypeName name="android.app.DownloadManager.Query"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="android.content.res.Resources"/>
 <fullyQualifiedTypeName name="com.wickedsoftwaredesigns.movielisting.R.array"/>
 <fullyQualifiedTypeName name="android.widget.ArrayAdapter"/>
-<fullyQualifiedTypeName name="android.R"/>
 <fullyQualifiedTypeName name="android.R.layout"/>
 <fullyQualifiedTypeName name="android.widget.AdapterView"/>
 <fullyQualifiedTypeName name="android.widget.AdapterView.OnItemSelectedListener"/>
@@ -60,4 +56,8 @@
 <fullyQualifiedTypeName name="com.wickedsoftwaredesigns.movielisting.R.id"/>
 <fullyQualifiedTypeName name="android.widget.TextView"/>
 <fullyQualifiedTypeName name="com.wickedsoftwaredesigns.movielisting.R.layout"/>
+<fullyQualifiedTypeName name="android.view.ViewGroup"/>
+<fullyQualifiedTypeName name="com.wickedsoftwaredesigns.movielisting.R.style"/>
+<fullyQualifiedTypeName name="android.R"/>
+<fullyQualifiedTypeName name="android.R.style"/>
 </qualifiedTypeNameHistroy>
